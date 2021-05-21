@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 require_once dirname(__FILE__).'/Cards.php';
 
-class PlayingCards implements Cards
+class AnimalCards implements Cards
 {
   private $cards;
 
@@ -13,11 +13,11 @@ class PlayingCards implements Cards
 
   public function shuffle(): void
   {
-    echo 'トランプをシャッフルします。',PHP_EOL;
+    echo '動物カードををシャッフルします。',PHP_EOL;
   }
 
   public function getValue(int $position): string
   {
-    return "5";
+    return "Penguin";
   }
 }
