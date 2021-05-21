@@ -8,16 +8,10 @@ class MemoryGame
 {
   private $playingCards;
 
-  public function __construct(string $cardType)
+  public function __construct(Cards $cards)
   {
-    //  指定されたカードの種類をみて分岐
-    if($cardType === 'Animal'){
-      $this->playingCards = new AnimalCards();
-    }elseif($cardType === 'Playing'){
-      $this->playingCards = new PlayingCards();
-    }else{
-      die('指定されたカードの種類は登録されていません。');
-    }
+    //  依存性の注入
+    $this->playingCards = $cards;
 
     $this->playingCards->shuffle();
   }
