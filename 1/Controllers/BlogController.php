@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-require_once dirname(__FILE__).'/DatabaseModelFactory.php';
+namespace MyFactory\Controllers;
+
+require_once dirname(__FILE__).'/../DatabaseModelFactory.php';
 
 class BlogController
 {

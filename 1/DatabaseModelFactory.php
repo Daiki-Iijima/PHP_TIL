@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace MyFactory;
 
-require_once dirname(__FILE__).'/UserModel.php';
-require_once dirname(__FILE__).'/FriendModel.php';
-require_once dirname(__FILE__).'/BlogModel.php';
+require_once dirname(__FILE__).'/Models/UserModel.php';
+require_once dirname(__FILE__).'/Models/FriendModel.php';
+require_once dirname(__FILE__).'/Models/BlogModel.php';
 
 class DatabaseModelFactory
 {
