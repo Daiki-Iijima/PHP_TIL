@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace MyFactory\Controllers;
 
+use MyFactory\DatabaseModelFactory;
+use MyFactory\TestDatabaseModelFactory;
+
 require_once dirname(__FILE__).'/../DatabaseModelFactory.php';
+require_once dirname(__FILE__).'/../TestDatabaseModelFactory.php';
 
 class BlogController
 {
@@ -13,9 +17,13 @@ class BlogController
   private $blog;
   private $friend;
 
-  public function __construct()
+  public function __construct(bool $isTesting = false)
   {
-    $this->modelFactory = new \MyFactory\DatabaseModelFactory();
+    if($isTesting){
+      $this->modelFactory = new TestDatabaseModelFactory();
+    }else{
+      $this->modelFactory = new DatabaseModelFactory();
+    }
 
     $this->user = $this->modelFactory->createUserModel();
     $this->blog = $this->modelFactory->createBlogModel();

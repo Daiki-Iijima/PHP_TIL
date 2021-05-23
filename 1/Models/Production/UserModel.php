@@ -3,7 +3,11 @@ declare(strict_types=1);
 
 namespace MyFactory\Models;
 
-class UserModel
+use MyFactory\Models\Interfase\UserModelInterfase;
+
+require_once dirname(__FILE__).'/../Interface/UserModelInterfase.php';
+
+class UserModel implements UserModelInterfase
 {
   public function find(int $userId): void
   {

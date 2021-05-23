@@ -8,29 +8,29 @@ namespace MyFactory;
 use MyFactory\Models\Interfase\UserModelInterfase;
 use MyFactory\Models\Interfase\FriendModelInterfase;
 use MyFactory\Models\Interfase\BlogModelInterfase;
-use MyFactory\Models\UserModel;
-use MyFactory\Models\FriendModel;
-use MyFactory\Models\BlogModel;
+use MyFactory\Models\Test\TestUserModel;
+use MyFactory\Models\Test\TestFriendModel;
+use MyFactory\Models\Test\TestBlogModel;
 
 require_once dirname(__FILE__).'/AbstractDatabaseFactory.php';
-require_once dirname(__FILE__).'/Models/Production/UserModel.php';
-require_once dirname(__FILE__).'/Models/Production/FriendModel.php';
-require_once dirname(__FILE__).'/Models/Production/BlogModel.php';
+require_once dirname(__FILE__).'/Models/Test/TestUserModel.php';
+require_once dirname(__FILE__).'/Models/Test/TestFriendModel.php';
+require_once dirname(__FILE__).'/Models/Test/TestBlogModel.php';
 
-class DatabaseModelFactory extends AbstractDatabaseFactory
+class TestDatabaseModelFactory extends AbstractDatabaseFactory
 {
   public function createUserModel(): UserModelInterfase
   {
-    return new UserModel();
+    return new TestUserModel();
   }
 
   public function createFriendModel(): FriendModelInterfase
   {
-    return new FriendModel();
+    return new TestFriendModel();
   }
 
   public function createBlogModel(): BlogModelInterfase
   {
-    return new BlogModel();
+    return new TestBlogModel();
   }
 }

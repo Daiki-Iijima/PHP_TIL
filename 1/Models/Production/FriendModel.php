@@ -3,7 +3,11 @@ declare(strict_types=1);
 
 namespace MyFactory\Models;
 
-class FriendModel
+use MyFactory\Models\Interfase\FriendModelInterfase;
+
+require_once dirname(__FILE__).'/../Interface/FriendModelInterfase.php';
+
+class FriendModel implements FriendModelInterfase
 {
   public function find(int $userId): void
   {
